@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import AboutPageLayout from './components/pages/about.page';
+import ContactsPageLayout from './components/pages/contacts.page';
+import ImageDetailsLayoutPage from './components/pages/image-details.page';
+import LayoutPage from './components/pages/layout.page';
+import SettingsPageLayout from './components/pages/settings.page';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LayoutPage />} />
+      <Route path="/:id" element={<ImageDetailsLayoutPage />} />
+      <Route path="/about" element={<AboutPageLayout />} />
+      <Route path="/contacts" element={<ContactsPageLayout />} />
+      <Route path="/settings" element={<SettingsPageLayout />} />
+    </Routes>
   );
 }
 
