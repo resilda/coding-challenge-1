@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+This small projects implements a simple image gallery using libraries such as: react (template: Typescript) and redux toolkit while it is integrated with Imgur API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The main page, displays a simple album gallery where the data are fetched from `https://api.imgur.com/3/gallery/{section}/{sort}/{window}/?showViral=boolean`.
 
-## Available Scripts
+There are new data loaded for each selected `section`, `sort`, `window` and when `showViral` is set to true.
 
-In the project directory, you can run:
+- Sections: are displayed as tags with options: Top, Hot, User. Defaults to "Hot". 
+- Sorting Labels: are displayed as a list of elements with options:  Top, Viral, Time, Rising. Defaults to "Viral". These options are loaded only when selected section is "User".
+- Window Filters: are also displayed as list of elements with options: Day, Week, Month, Year, All. Defaults to "Day". These options are loaded only when selected section is "Top".
+- Show Viral: is displayed as a button that can only be enabled when section is "User". For any other section this button is disabled. 
 
-### `yarn start`
+In the main page there is also a navigation bar, appeared as page header. The user can navigate between About, Contacts and Settings page. These options where added in order to make the landing page as user friendly as possible. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When clicking on a certain image in the gallery there is a details page opened that displayes: Image selected in a larger size than the one displaying in the gallery. Extra additional details such as: title, description, upVotes, downVotes and score. The user can navigate through different images in the gallery and everytime an image is clicked the data displayed in "Details" page is specifically connected to the image chosen.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Regarding the libraries used in the application, I have chosen a mix:
+- react-router-dom: to navigate through different application pages.
+- redux-toolkit: state management and API requests. 
+- Tailwind: styling library to create and style the components, based on a simple design.
+- classname library: used for styling components based on ceratin conditions through the code. 
+- Additional react hooks used.
 
-### `yarn test`
+There is also a `prettier` file setup, in order to have the code evenly formatted throught the files.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
